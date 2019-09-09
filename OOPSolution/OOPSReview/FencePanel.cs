@@ -40,6 +40,7 @@ namespace OOPSReview
         public double Height
         {
             get
+            {
                 return _Height;
             }
             set
