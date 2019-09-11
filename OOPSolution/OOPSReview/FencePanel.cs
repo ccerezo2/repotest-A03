@@ -6,6 +6,19 @@ using System.Threading.Tasks;
 
 namespace OOPSReview
 {
+    //⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣬⡛⣿⣿⣿⣯⢻ 
+    //⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢻⣿⣿⢟⣻⣿⣿⣿⣿⣿⣿⣮⡻⣿⣿⣧ 
+    //⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣆⠻⡫⣢⠿⣿⣿⣿⣿⣿⣿⣿⣷⣜⢻⣿ 
+    //⣿⣿⡏⣿⣿⣨⣝⠿⣿⣿⣿⣿⣿⢕⠸⣛⣩⣥⣄⣩⢝⣛⡿⠿⣿⣿⣆⢝ 
+    //⣿⣿⢡⣸⣿⣏⣿⣿⣶⣯⣙⠫⢺⣿⣷⡈⣿⣿⣿⣿⡿⠿⢿⣟⣒⣋⣙⠊ 
+    //⣿⡏⡿⣛⣍⢿⣮⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿ 
+    //⣿⢱⣾⣿⣿⣿⣝⡮⡻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⣋⣻⣿⣿⣿⣿ 
+    //⢿⢸⣿⣿⣿⣿⣿⣿⣷⣽⣿⣿⣿⣿⣿⣿⣿⡕⣡⣴⣶⣿⣿⣿⡟⣿⣿⣿ 
+    //⣦⡸⣿⣿⣿⣿⣿⣿⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿ 
+    //⢛⠷⡹⣿⠋⣉⣠⣤⣶⣶⣿⣿⣿⣿⣿⣿⡿⠿⢿⣿⣿⣿⣿⣿⣷⢹⣿⣿ 
+    //⣷⡝⣿⡞⣿⣿⣿⣿⣿⣿⣿⣿⡟⠋⠁⣠⣤⣤⣦⣽⣿⣿⣿⡿⠋⠘⣿⣿ 
+    //⣿⣿⡹⣿⡼⣿⣿⣿⣿⣿⣿⣿⣧⡰⣿⣿⣿⣿⣿⣹⡿⠟⠉⡀⠄⠄⢿⣿ 
+    //⣿⣿⣿⣽⣿⣼⣛⠿⠿⣿⣿⣿⣿⣿⣯⣿⠿⢟⣻⡽⢚⣤⡞⠄⠄⠄⢸⣿
     //by default all classes are private
     //for this class to be used by an outside user(anything but this class)
     //you must alter the permission for this class 
@@ -26,9 +39,11 @@ namespace OOPSReview
         //This style doesn't need a private data member.
         //the system will create an internal data member of the
         //  rdt specified in the property definition 
+
         //-------------------------------------------------------
         //----------------Auto Implemented Property--------------
         //-------------------------------------------------------
+
         //public double Height { get; set; } Doesn't cover negative numbers
         //Assuming you wish to validate data You should be 
         //using a fully implemented property.
@@ -59,7 +74,10 @@ namespace OOPSReview
         }
         public double Width { get; set; }
 
-        //Fully Implemented property:
+        //---------------------------------------------------------
+        //----------------Fully Implemented property:--------------
+        //---------------------------------------------------------
+
         //This style NEEDS a private data member 
         // the private data member will store the incoming data value
         //usually, this form of property is used when
@@ -91,12 +109,19 @@ namespace OOPSReview
                 }
             }
         }
+        //------------------------------------------------
+        //--------------------Nullable--------------------
+        //------------------------------------------------
+
         //nullable numeric property for a double.
         //there are ONLY two possibilities 
         //  a) Data is missin:Null
         //  b) Data is present and is of the right datatype
         public double? Price { get; set; }
-        //Constructors
+
+        //-------------------------------------------------------
+        //----------------------Constructor----------------------
+        //-------------------------------------------------------
 
         //either you could use your controctors or you omit your
         // constructors
@@ -105,7 +130,10 @@ namespace OOPSReview
         //      that data member datatype.
         //If you code any constructors you are responsible for coding all constructors to be used by this class.
 
-        //Default
+        //-------------------------------------------------
+        //---------------------Default---------------------
+        //-------------------------------------------------
+
         //Simulates the system initialization of your data
         public FencePanel()
         {
@@ -115,5 +143,39 @@ namespace OOPSReview
             Width = 8.0;
             //the reminder of your data value would be the system values
         }
-    }
-}
+
+        //-----------------------------------------------
+        //--------------------Greedie--------------------
+        //-----------------------------------------------
+
+        //Constructors has a list of parameters which will receive
+        //      an argument value for each property in the class
+        public FencePanel(double height, double width, string style, double? price )
+        {
+            Height = height;
+            Width = width;
+            Style = style;
+            Price = price;
+        }
+
+        //----------------------------------------------------------
+        //------------------Methods/Behaviors-----------------------
+        //----------------------------------------------------------
+
+        public double EstimatedNumberOfPanels(double linearlength)
+        {
+            //You could use either the property width or the
+            //      data member _Width
+            //Using the poroperty ensures all validation or excess logic
+            //      is in play
+            double numberofpanels = linearlength / Width;
+            return numberofpanels;
+        }
+
+        public double FenceArea(double linearlength)
+        {
+            return Width * Height * EstimatedNumberOfPanels(linearlength);
+        }
+
+    }//eot
+}//eon
