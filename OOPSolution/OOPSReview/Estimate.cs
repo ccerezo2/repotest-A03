@@ -8,10 +8,39 @@ namespace OOPSReview
 {
     public class Estimate
     {
+        //⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣿⣿⣿⣿⡏⣏⣿ 
+        //⣿⣿⣿⣿⣿⣿⣿⢳⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⡽⣿⣿⣿⡸⣿ 
+        //⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣏⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⣿⣧⡙⠻⣿⡇⣿ 
+        //⣧⣿⣿⣿⣿⣷⣯⣿⣿⣿⣿⢟⣞⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⣿⣿⣦⡈⠃⣿ 
+        //⣿⣿⣿⣿⣿⣿⣾⣿⣟⣻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣴⡦⣴⣶⣶⣶⣶⡦⣿ 
+        //⣿⣾⣿⡏⣠⠄⠈⣉⡙⡻⢷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⡿⠿⢿⣿⣿⣿⣿⡇⣿ 
+        //⣿⣿⣿⣧⢿⡀⢀⣉⠉⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣶⠄⠄⢠⣤⣄⣀⡀⣿ 
+        //⡻⣿⣿⣿⣿⣧⣿⣿⣧⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢀⣠⣀⠄⢸⣿⣇⣿ 
+        //⣯⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠾⣛⣿⣵⣿⣿⡟⣿ 
+        //⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⣿ 
+        //⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠄⣿ 
+        //⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⣿ 
+        //⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣀⣈⣉⡛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿ 
+        //⣿⣽⣿⣿⠊⢿⣿⣿⣿⣇⠿⠿⢿⣿⣦⡸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿ 
+        //⣿⣯⣿⣿⡇⠄⠙⠿⣿⣿⣿⣷⣶⣶⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠄⣿
         public double TotalPrice { get; private set; }
         public double LinearLength { get; set; }
         public FencePanel Panel { get; set; }
         public List<FenceGate> GateList { get; set; }
+
+        public Estimate()
+        {
+            //this constructor emulates the system constructors
+        }
+
+        public Estimate(double linearlength, FencePanel panel, List<FenceGate> gates)
+        {
+            LinearLength = linearlength;
+            Panel = panel;
+            GateList = gates;
+            //Optionally
+            CalculatePrice();
+        }
 
         public double CalculatePrice()
         {
@@ -19,7 +48,7 @@ namespace OOPSReview
             //there is no validation in this example
             double numberofpanels = Panel.EstimatedNumberOfPanels(LinearLength);
             //typecastinf ((int)numbervalue))
-            if ((int)(numberofpanels *10.0)>((int)numberofpanels *10))
+            if ((int)(numberofpanels * 10.0) > ((int)numberofpanels * 10))
             {
                 numberofpanels = (int)numberofpanels + 1;
             }

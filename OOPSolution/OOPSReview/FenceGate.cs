@@ -22,6 +22,7 @@ namespace OOPSReview
         //⠄⠄⠈⢸⣿⠄⠙⢿⣿⣿⣹⣿⣿⣿⣿⣟⡃⣽⣿⣿⡟⠁⣿⣿⢻⣿⣿⢿⠄⠄ 
         //⠄⠄⠄⠘⣿⡄⠄⠄⠙⢿⣿⣿⣾⣿⣷⣿⣿⣿⠟⠁⠄⠄⣿⣿⣾⣿⡟⣿⠄⠄ 
         //⠄⠄⠄⠄⢻⡇⠸⣆⠄⠄⠈⠻⣿⡿⠿⠛⠉⠄⠄⠄⠄⢸⣿⣇⣿⣿⢿⣿⠄⠄
+        //02 luvs u
         private double _Height;
         public double _Width;
         private string _Style;
@@ -76,7 +77,7 @@ namespace OOPSReview
             Style = style;
             Price = price;
         }
-        public double FenceGateArea(double linearlength)
+        public double FenceGateArea()
         {
             return _Width * Height;
         }
